@@ -40,7 +40,7 @@ function App() {
   function send()
   {
     setstatus(true)
-    axios.post("https://bulkmail-app-dctd.onrender.com",{msg:msg,emails:emailList})
+    axios.post("https://bulkmail-app-dctd.onrender.com/sendemail",{msg:msg,emails:emailList})
     .then(function(data)
   {
     console.log(data.data);
