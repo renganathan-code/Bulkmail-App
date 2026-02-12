@@ -49,7 +49,7 @@ new Promise(async function(resolve,reject){
             for(let i=0; i< emails.length ; i++){
                 await transporter.sendMail(
                     {
-                        from:"renganathan.pakkiyaraj@gmail.com",
+                        from:data.user,
                         to:emails[i],
                         subject:"bulk mail",
                         text:msg,
@@ -58,32 +58,28 @@ new Promise(async function(resolve,reject){
                 console.log("send to "+emails[i]);
             }
             resolve("Success")
-            }
-            catch(error){
-
-                console.log("email error:"+error);
-                reject("Failed")
-            }
-        }).then(function()
+        }
+        catch(error){
+            console.log("email error:"+error);
+            reject("Failed")
+        }
+    }).then(function()
     {
         res.send(true)
         console.log("Success");
     }).catch(function()
-{
-    res.send(false)
-    console.log("Failed");
-})
-    
+    {
+        res.send(false)
+        console.log("Failed");
+    })
+
 }).catch(function(error){
     console.log(error);
-    
 })
 })
 
+const port = process.env.PORT || 5000;
 
-
-const port = 5000
-app.listen(port,function(req,res)
-{
-    console.log(`you server started,localhost ${port}`);
-})
+app.listen(port, () => {
+    console.log(`Server started on port ${port}`);
+});
