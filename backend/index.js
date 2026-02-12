@@ -60,8 +60,9 @@ new Promise(async function(resolve,reject){
             resolve("Success")
         }
         catch(error){
-            console.log("email error:"+error);
-            reject("Failed")
+            console.log("email error:");
+            console.log(error);
+            reject(error)
         }
     }).then(function()
     {
