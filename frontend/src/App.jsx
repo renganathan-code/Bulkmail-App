@@ -83,7 +83,7 @@ function App() {
             <h1 className="font-medium p-4 text-gray-700">A bulk mail application that sends messages to multiple email addresses with a single click.</h1>
           </div>
           
-          <div className="flex flex-col items-center text-center text-black px-5 py-7">
+          <div className="flex flex-col items-center text-center text-black px-5 py-5">
             <textarea
             onChange={handlemsg}
             value={msg}
